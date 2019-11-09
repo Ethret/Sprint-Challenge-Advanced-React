@@ -8,14 +8,15 @@ function App() {
 
   return (
     <>
-      <div className="mainContainer" style={{
+      <div className="mainContainer" data-testid="mainContainer" style={{
         background: theme === 'dark' ? '#000' : '#fff',
-        color: theme === 'dark' ? '#fff' : '#000'
+        color: theme === 'dark' ? '#fff' : '#000',
+        borderColor: theme === 'dark' ? '#fff' : '#000'
       }}>
         <button type="button" onClick={toggleTheme}>
-        Switch theme
+        <span>Switch theme</span>
         </button>
-        <PlayerList theme={theme}/>
+        <PlayerList/>
       </div>
     </>
   );

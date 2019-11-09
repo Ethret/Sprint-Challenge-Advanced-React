@@ -16,5 +16,6 @@
 .playerCard {
   width: 18%;
   height: 180px;
-  border: 1px solid black
+  border: 1px solid;
+  border-color: inherit
 }
