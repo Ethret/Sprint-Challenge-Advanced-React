@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import PlayerList from './components/PlayerList';
 import './App.css';
+import useDarkMode from './utils/useDarkMode'
 
 function App() {
+  const [ theme, toggleTheme ] = useDarkMode()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="mainContainer" data-testid="mainContainer" style={{
+        background: theme === 'dark' ? '#000' : '#fff',
+        color: theme === 'dark' ? '#fff' : '#000',
+        borderColor: theme === 'dark' ? '#fff' : '#000'
+      }}>
+        <button type="button" onClick={toggleTheme}>
+        <span>Switch theme</span>
+        </button>
+        <PlayerList/>
+      </div>
+    </>
   );
 }
 
